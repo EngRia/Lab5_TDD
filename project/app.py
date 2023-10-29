@@ -37,7 +37,16 @@ db = SQLAlchemy(app)
 
 from project import models
 
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get("logged_in"):
+            flash("Please log in.")
+            return jsonify({"status": 0, "message": "Please log in."}), 401
+        return f(*args, **kwargs)
 
+    return decorated_function
+    
 @app.route("/")
 def index():
     """Searches the database for entries, then displays them."""
@@ -71,17 +80,6 @@ def login():
             flash("You were logged in")
             return redirect(url_for("index"))
     return render_template("login.html", error=error)
-
-
-def login_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if not session.get("logged_in"):
-            flash("Please log in.")
-            return jsonify({"status": 0, "message": "Please log in."}), 401
-        return f(*args, **kwargs)
-
-    return decorated_function
 
 
 @app.route("/logout")
