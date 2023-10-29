@@ -1,4 +1,8 @@
-# What are the pros and cons of TDD?
+This is a clone of https://github.com/mjhea0/flaskr-tdd </br>
+
+# Group Project Test Cases </br>
+
+# What are the pros and cons of TDD? </br>
 Test Driven Development (TDD) involves writing test cases based on feature requests before developing code to pass those tests. Summarized below are the pros and cons:
   1) PROS:
      * More confidence at time of code deployment 
