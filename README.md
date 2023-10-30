@@ -1,6 +1,7 @@
 This is a clone of https://github.com/mjhea0/flaskr-tdd </br>
 
 # Group Project Test Cases </br>
+https://github.com/ECE444-2023Fall/project-1-web-application-design-group21-world/blob/events_organizer_api_db/tests/app_test.py#L100-L124
 
 # What are the pros and cons of TDD? </br>
 Test Driven Development (TDD) involves writing test cases based on feature requests before developing code to pass those tests. Summarized below are the pros and cons:
